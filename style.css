@@ -1,0 +1,46 @@
+body {
+    background-image: url("bg.svg");
+}
+ul {
+    list-style-type: none;
+}
+li {
+    float: left;
+}
+.fort {
+    float: right;
+}
+.fort a {
+ display: flex;
+ padding: 10px 22px;
+ font-size: 29px;
+ font-family: sans-serif;
+ text-decoration: none;
+ color: white;
+}
+.fort a:hover {
+    color: red;
+}
+h1 {
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 43px;
+}
+p {
+    font-family: sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+}
+.switch {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: red;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+.switch:hover {
+    color: white;
+}
