@@ -1,6 +1,11 @@
 body {
     background-image: url("bg.svg");
 }
+.nav {
+    position: sticky;
+    top: 0px;
+    padding: 10px 0px;
+}
 ul {
     list-style-type: none;
 }
@@ -43,4 +48,9 @@ p {
 }
 .switch:hover {
     color: white;
+}
+.osu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
