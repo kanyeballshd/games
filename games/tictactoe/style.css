@@ -1,0 +1,359 @@
+html{
+    font-size: 10px;
+}
+body {
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    font-family: 'Reggae One';
+    display: flex;
+    justify-content: center;
+    background: #dfb02d;
+}
+.container{
+    box-shadow: 5px 10px 8px #9e7e13;
+    display: flex;
+    height: 70vh;
+    width: 60vw;
+    background: white;
+    padding: 50px;
+    margin: 50px;
+    justify-content: center;
+    flex-direction: column;
+}
+.footer{
+    margin-top: 100px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    font-size:2rem;
+    width: 100%;
+    height: 120px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    z-index: 0;
+}
+.footer h3{
+    font-family: 'Balsamiq Sans',sans-serif;
+    color: black;
+    align-self: center;
+    display: inline-block;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+}
+.footer h3 .fa-heart{
+    color: red;
+}
+.icons a{
+    color:#3d3d3d;
+}
+#github:hover{
+    color: black;
+}
+#telegram:hover{
+    color: #2CA3E0;
+}
+#twitter:hover{
+    color: #1A91DA;
+}
+.title{
+    text-align: center;
+    font-size:5rem;
+    font-weight: 600;
+    color: rgb(10, 10, 10); 
+}
+.title span{
+    color: red;
+}
+.btn{
+    text-align: center;
+    margin: 7px;
+    font-size: 2.5rem;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0px;
+    background:#f19327;
+    color:red;
+    font-family: 'Reggae One';
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn:hover{
+    color: aliceblue;
+    transform: scale(0.9);
+    transition: transform 0.2s ease;
+  }
+.option{
+    display: flex;
+    position: relative;
+    top: 10rem;
+    justify-content: center;
+    width: 100%;
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding: 8px 0;
+    border: none;
+    outline:none;   
+}
+
+.start-page{
+    display:block;
+    justify-content: center;
+    height: 100%;
+    width:100%;
+}
+
+.doption{
+    display:flex;
+    justify-content:space-evenly;
+}
+.dbtn{
+    text-align: center;
+    margin: 4px;
+    font-size: 25px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0px;
+    background:#f19327;
+    color:red;
+    font-family: 'Reggae One';
+    cursor: pointer;
+}
+.dbtn:hover{
+    color: aliceblue;
+    transform: scale(0.9);
+    transition: transform 0.2s ease;
+  }
+.dtitle{
+    text-align: center;
+    font-size:50px;
+    font-weight: 600;
+    color: rgb(10, 10, 10); 
+}
+.difficulty{
+    display:none;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.game-container{
+    height: 100vh;
+    width:65vw;
+    background: white;
+    opacity: 1;
+    display: none;
+    box-shadow: 5px 10px 8px #9e7e13;
+}
+.status{
+    margin-top: 5%;
+    margin-bottom: 10%;
+    font-family: 'Balsamiq Sans';
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    visibility: visible;  
+}
+.status span{
+    color: red;
+    text-shadow: 1.5px 1.5px #CE2948;
+}
+.game-box{
+    display: flex;
+    justify-content: center;
+}
+.main-game{
+    position: relative;
+    top:10%;
+    background:#C8C8C8 ;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-gap:15px;
+}
+
+
+.cell{
+    height:160px;
+    width:160px;
+    background: white;
+    font-size: 150px;
+    font-family: 'Balsamiq Sans', sans-serif;
+    text-align: center;
+    cursor: pointer;
+    padding: 0%; 
+}
+.l012,.l345,.l678,.l036,.l147,.l258,.l048,.l246{
+    position:relative;
+    offset-position:unset;
+    top: 7%;
+    align-self: center;
+    height: 13px;
+    width: 450px;
+    background-color:#FAC72E;
+    box-shadow: 2px 2px 2px #C69E24;
+    border: 0;
+    border-radius: 2px;
+    margin-bottom:-20px;
+    overflow: hidden;
+    z-index:2;
+    visibility: hidden;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.l345{
+    top: 30.6%;
+}
+.l678{
+    top: 54%;
+}
+.l036{
+    top:32.5%;
+    left:-174px;
+    transform: rotate(90deg);
+}
+.l147{
+    transform: rotate(90deg);
+    top: 32.5%;
+}
+.l258{
+    transform: rotate(90deg);
+    top: 32.5%;
+    left: 174px;
+}
+.l048{
+    position:relative;
+    transform: rotate(45deg);
+    width: 590px;
+    top:32.5%;
+}
+.l246{
+    transform: rotate(-45deg);
+    top:32.5%;
+    width:590px;
+}
+
+.displayresult{
+    position: fixed;
+    font-family: 'Balsamiq Sans';
+    font-size: 2rem;
+    top:35%;
+    height: 30%;
+    width:40%;
+    left:30%;
+    background:#ffffff;
+    opacity: 1;
+    flex-direction: column;
+    display: none;
+}
+.displayresult h2{
+    padding-bottom: 6%;
+    align-self: center;
+}
+
+/* code for making page responsive */
+@media (max-width:515px){
+    html{
+        font-size:8.2px;
+    }
+    .container{
+        padding: 30px;
+        margin: 30px;
+        height:80vh;
+    }
+    .footer{
+        font-size:2rem;
+    }
+    .btn{
+        font-size:3rem;
+    }
+}
+@media (max-width:410px){
+    html{
+        font-size:7px;
+    }
+    .container{
+        padding:20px;
+        margin:20px;
+        height:85vh;
+        width:83vw;     
+    }
+    .footer{
+        font-size:2.2rem;
+    }
+    .btn{
+        font-size:3rem;
+    }
+}
+@media (max-width:1045px){
+    .game-container{
+        width: 75vw;
+    }
+    .displayresult{
+        width: 55%;
+        left: 22.5%;
+    }
+}
+@media (max-width:850px){
+    .game-container{
+        width: 85vw;
+    }
+    .displayresult{
+        width: 60%;
+        left: 20%;
+    }
+}
+@media (max-width:735px){
+    .cell{
+        height: 140px;
+        width: 140px;
+        font-size: 130px;
+    }
+    .l012,.l345,.l678,.l036,.l147,.l258,.l048,.l246{
+        width: 420px;
+    }
+    .l048{
+        width:570px;
+    }
+    .l246{
+        width:570px;
+    }
+}
+@media (max-width:580px){
+    .status{
+        font-size: 3.5rem;
+        margin-bottom: 20%;
+    }
+    .game-container{
+        height: 80vh;
+    }
+    .cell{
+        height: 100px;
+        width: 100px;
+        font-size: 90px;
+    }
+    .displayresult{
+        width: 80%;
+        left: 10%;
+        top: 25%;
+    }
+}
+@media (max-width:430px){
+    .status{
+        font-size: 4rem;
+        margin-bottom: 26%;
+    }
+    .game-container{
+        height: 75vh;
+    }
+    .cell{
+        height: 80px;
+        width: 80px;
+        font-size: 70px;
+    }
+    .displayresult{
+        width: 100%;
+        left: 0%;
+        top: 25%;
+    }
+}

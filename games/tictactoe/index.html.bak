@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?version=1.2">
+    <link rel="shortcut icon" href="assets/favicon.png" class="rel">
+    <title>Tic Tac Toe</title>
+</head>
+
+<body link="black" vlink="black" alink="red">
+    <div class="container" id="container">
+        <div class="start-page" id="start-page">
+            <h1 class="title">Tic <span>Tac</span> Toe</h1>
+            <div class="option">
+                <input type="button" class="btn" value="1 Player" id="btn1" onclick="gametype(this.id)">
+                <input type="button" class="btn" value="2 player" id="btn2" onclick="gametype(this.id)">
+            </div>
+        </div>
+        <div class="difficulty" id="difficulty">
+            <h1 class="dtitle">Difficulty</h1>
+            <div class="doption">
+                <input type="button" class="dbtn" value="Easy" id="btn3" onclick="gamedifficulty(this.id)"><br>
+                <input type="button" class="dbtn" value="Hard" id="btn4" onclick="gamedifficulty(this.id)">
+            </div>
+        </div>
+        <div class="footer" id="footer">
+            <h3>Made With <span><i class="fa fa-heart"></i></span> By Amit </h3><div class="icons" style="align-self: center;"><a href="https://github.com/amit-y11" target="_blank"><i class="fa fa-github fa-lg" id="github" aria-hidden="true"></i></a> <a href="https://telegram.dog/amit_y11" target="_blank"><i class="fa fa-telegram fa-lg" id="telegram" aria-hidden="true"></i></a> <a href="https://twitter.com/amit_y11" target="_blank"><i class="fa fa-twitter fa-lg" id="twitter" aria-hidden="true"></i></a></div>
+        </div>
+    </div>
+    <div class="game-container" id="game-container">
+        <div class="status" id="status"><span id='player'>X‎‎‎‎‎‏‏‎</span>'s ‎Turn</div>
+        <hr class="l012" id="l012">
+        <hr class="l345" id="l345">
+        <hr class="l678" id="l678">
+        <hr class="l036" id="l036">
+        <hr class="l147" id="l147">
+        <hr class="l258" id="l258">
+        <hr class="l048" id="l048">
+        <hr class="l246" id="l246">
+        <div class="game-box">
+        <div class="main-game">
+            <div class="cell" id='0'></div>
+            <div class="cell" id='1'></div>
+            <div class="cell" id='2'></div>
+            <div class="cell" id='3'></div>
+            <div class="cell" id='4'></div>
+            <div class="cell" id='5'></div>
+            <div class="cell" id='6'></div>
+            <div class="cell" id='7'></div>
+            <div class="cell" id='8'></div>
+        </div>
+        </div>
+    </div>
+    <div class="displayresult" id="displayresult">
+        <h2 id="result"><span id="winner"></span> Won the Game!</h2>
+        <div class="doption">
+            <input type="button" class="dbtn" value="Play Again" id="btn3" onclick="finalResult(this.id)"><br>
+            <input type="button" class="dbtn" value="Main Menu" id="btn4" onclick="finalResult(this.id)">
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script src="https://use.fontawesome.com/f41fdf46fe.js"></script>
+</body>
+
+</html>

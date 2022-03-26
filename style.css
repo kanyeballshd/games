@@ -63,15 +63,15 @@ p {
     text-decoration: none;
     font-weight: 700;
 }
-a {
-    display: block;
-    font-family: helvetica;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    font-size: 24px;
 
+.gamechild {
+    display: block;
+    text-align: center;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: white;
+    font-size: 48px;
 }
-a:hover {
-    color: red;
+.gamechild a:hover {
+color: red;
 }

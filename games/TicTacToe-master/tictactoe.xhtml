@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+<style type="text/css">
+.box:hover {
+	background-color: #FEEDED;
+}
+.box {
+	height: 100px;
+	width: 100px;
+}
+.box_reload {
+	height: 100px;
+	width: 100px;
+}
+.box_reload:hover {
+	background-color: #FECDCD;
+}
+.overBox {
+	height: 100px;
+	width: 100px;
+}
+.doneBox {
+	background-color: #CCDDDD;
+	height: 100px;
+	width: 100px;
+}
+table, tr, td {
+	border-width: 5px;
+	border: solid;
+}
+table {
+	text-align: center;
+	vertical-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+.show {
+	text-align: center;
+	display: block;
+}
+.hide {
+	display: none;
+}
+</style>
+<script type="text/javascript">
+var status_player = parseInt(1);
+var player1_name = '';
+var player2_name = '';
+var status_arr = new Array(4);
+for (var i = 0; i &lt; 3; i++) {
+	status_arr[i] = new Array(3);
+}
+for(var i = 0; i &lt; 3; i++) {
+	for(var j = 0; j &lt; 3; j++) {
+		status_arr[i][j] = 0;
+	}
+}
+function reload_page() {
+	location.reload();
+}
+function initializePlayers() {
+	var temp_name = document.getElementById("player1").value;
+	player1_name = temp_name;
+	temp_name = document.getElementById("player2").value;
+	player2_name = temp_name;
+}
+function removeAllEvents() {
+	document.getElementById("r1c1").removeEventListener("click", boxClickHandler);
+	document.getElementById("r2c1").removeEventListener("click", boxClickHandler);
+	document.getElementById("r3c1").removeEventListener("click", boxClickHandler);
+	document.getElementById("r1c2").removeEventListener("click", boxClickHandler);
+	document.getElementById("r2c2").removeEventListener("click", boxClickHandler);
+	document.getElementById("r3c2").removeEventListener("click", boxClickHandler);
+	document.getElementById("r1c3").removeEventListener("click", boxClickHandler);
+	document.getElementById("r2c3").removeEventListener("click", boxClickHandler);
+	document.getElementById("r3c3").removeEventListener("click", boxClickHandler);
+}
+function checkIfWon() {
+	var i;
+	var j;
+	for(i=0; i &lt; 3; i++) {
+		var temp = status_arr[i][i];
+		for(j=0; j &lt; 3; j++) {
+			if(status_arr[i][j] != temp) {
+				break;
+			}
+		}
+		if(j == 3) {
+			return temp;
+		}
+		for(j=0; j &lt; 3; j++) {
+			if(status_arr[j][i] != temp) {
+				break;
+			}
+		}
+		if(j == 3) {
+			return temp;
+		}
+	}
+	if(status_arr[0][0] == status_arr[1][1]) {
+		if(status_arr[1][1] == status_arr[2][2]) {
+			return status_arr[0][0];
+		}
+	}
+	else
+		if(status_arr[0][2] == status_arr[1][1]) {
+			if(status_arr[1][1] == status_arr[2][0]) {
+				return status_arr[0][2];
+			}
+		}
+	return "";
+}
+function displayAll() {
+	for(var i = 0; i &lt; 3; i++) {
+		for(var j = 0; j &lt; 3; j++) {
+			alert(status_arr[i][j]);
+		}
+	}
+}
+function boxClickHandler() {
+	var id = this.id;
+	document.getElementById(id).removeEventListener("click", boxClickHandler);
+	document.getElementById(id).className = "doneBox";
+	var id_name = id.toString();
+	var row = parseInt(id_name.match(/\d+/g)[0]) - 1;
+	var column = parseInt(id_name.match(/\d+/g)[1]) - 1;
+	status_arr[row][column] = parseInt(status_player);
+	//alert(status_arr[row][column] + " " + row + " " + column + " " + status_player);
+	if(status_player == 1) {
+		status_player = 2;
+		document.getElementById(id).innerHTML = "X";
+	}
+	else {
+		status_player = 1;
+		document.getElementById(id).innerHTML = "O";
+	}
+	//displayAll();
+	var result = checkIfWon();
+	if(result == 1) {
+		document.getElementById("winner_name").innerHTML = player1_name + " won !!!";
+		removeAllEvents();
+	}
+	else
+		if (result == 2) {
+			document.getElementById("winner_name").innerHTML = player2_name + " won !!!";
+			removeAllEvents();
+		}
+}
+function changePlayerName() {
+	var id = this.id;
+	if(id.toString() == "player1") {
+		player1_name = document.getElementById(id).value;
+	}
+	else {
+		player2_name = document.getElementById(id).value;
+	}
+}
+function onload() {
+	document.getElementById("r1c1").addEventListener("click", boxClickHandler);
+	document.getElementById("r2c1").addEventListener("click", boxClickHandler);
+	document.getElementById("r3c1").addEventListener("click", boxClickHandler);
+	document.getElementById("r1c2").addEventListener("click", boxClickHandler);
+	document.getElementById("r2c2").addEventListener("click", boxClickHandler);
+	document.getElementById("r3c2").addEventListener("click", boxClickHandler);
+	document.getElementById("r1c3").addEventListener("click", boxClickHandler);
+	document.getElementById("r2c3").addEventListener("click", boxClickHandler);
+	document.getElementById("r3c3").addEventListener("click", boxClickHandler);
+	document.getElementById("reload_game").addEventListener("click", reload_page);
+	initializePlayers();
+	document.getElementById("player1").addEventListener("change", changePlayerName);
+	document.getElementById("player2").addEventListener("change", changePlayerName);
+}
+</script>
+		<title>
+				Tic Tac Toe on browser by Arun !!!
+		</title>
+	</head>
+	<body onload="onload()">
+<!-- Tic Tac Toe game that can be played on browser -->
+		<p class='show'>
+			<table class="center">
+				<tr>
+					<td class='box'>
+					<form name='player_names'>
+						Player 1 : <input id='player1' value='Player 1' />
+						<br/>
+						Player 2 : <input id='player2' value='Player 2' />
+					</form>
+					</td>
+					<td>
+						<div class='box_reload' id='reload_game'><br/><br/>Reset</div>
+					</td>
+				</tr>
+			</table>
+		</p>
+		<table class="center">
+			<tr>
+				<td class="box" id="r1c1">
+				</td>
+				<td class="box" id="r1c2">
+				</td>
+				<td class="box" id="r1c3">
+				</td>
+			</tr>
+			<tr>
+				<td class="box" id="r2c1">
+				</td>
+				<td class="box" id="r2c2">
+				</td>
+				<td class="box" id="r2c3">
+				</td>
+			</tr>
+			<tr>
+				<td class="box" id="r3c1">
+				</td>
+				<td class="box" id="r3c2">
+				</td>
+				<td class="box" id="r3c3">
+				</td>
+			</tr>
+		</table>
+		<p class="show" id="winner_name"></p>
+	</body>
+</html>

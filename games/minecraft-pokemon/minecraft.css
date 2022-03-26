@@ -1,0 +1,371 @@
+
+@import url('https://fonts.googleapis.com/css?family=Bungee');
+
+body{
+    line-height: 0 !important;
+}
+
+#myModal{
+    background: url(images/minecraftbg.jpg);
+    background-size:contain;
+    width: auto;
+    height:auto;
+}
+.captureMessage{
+    font-family: 'Bungee', cursive;
+    font-size: 20px;
+}
+#failedCapture,#oakMessage{
+    font-family: 'Bungee', cursive;
+    font-size: 20px;
+    background: white;
+    height: 120px;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30%;
+}
+#oakMessage{
+    font-size: 19px;
+}
+#capturedCaption, #capturedAllCaption{
+    background: white;
+    height: 120px;
+    width:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30%;
+    margin-right: 20%;
+}
+
+#logo{
+    background: url(images/logo.png);
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    width:900px;
+    height:188px;
+    margin-top:80px;
+}
+
+#pokelogo{
+    background: url(images/pokemon.png);
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    width:900px;
+    height:150px;
+}
+
+.button-container{
+    margin-top:40px;
+}
+
+.button-container  button{
+    font-family: 'Bungee', cursive;
+    margin-left:20px;
+    width:150px;
+}
+.green{
+    background-color: green;
+}
+#tutorialModal, #winningModal{
+    background-image: url(images/professor.png);
+    background-repeat:no-repeat;
+    background-position-y: 100%;
+    background-position-x: 95%;
+    width:auto;
+    height:auto;
+}
+
+#winningModal a{
+    margin: 40px;
+}
+#winningModal #rules{
+    padding:50px;
+}
+
+#winningModal #rules > div{
+    margin-top: 40px;
+    padding-bottom: 40px;
+}
+
+#winningModal #rules img{
+    height: 100px;
+    width: 100px;
+}
+
+#winningModal #rules a{
+    color: white;
+    text-decoration: none;
+}
+
+#rules{
+    background-color:white;
+    height:auto;
+    padding: 20px;
+    font-family: 'Bungee', cursive;
+    line-height:1;
+    font-size:20px;
+}
+
+#rules h2{
+    margin-bottom:20px;
+}
+
+
+.divBg:not(.clouds){
+    animation: colorchange 400s; /* animation-name followed by duration in seconds*/
+       /* you could also use milliseconds (ms) or something like 2.5s */
+    -webkit-animation: colorchange 400s; /* Chrome and Safari */
+}
+
+
+ @keyframes colorchange
+ {
+   0%   {background-color: #91C1FC;}
+   10   {background-color: #81ade2;}
+   10%  {background-color: #74a2db;}
+   20%  {background-color: #1464c5;}
+   30%  {background-color: #5b88c1;}
+   40% {background-color: #3a5e8c;}
+   50% {background-color: #000e1f;}
+   60%  {background-color: #3a5e8c;}
+   70%  {background-color: #5b88c1;}
+   80%  {background-color: #1464c5;}
+   90%  {background-color: #74a2db;}
+   100%  {background-color: #81ade2;}
+ }
+
+ @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+ {
+     0%   {background-color: #91C1FC;}
+     10   {background-color: #81ade2;}
+     10%  {background-color: #74a2db;}
+     20%  {background-color: #1464c5;}
+     30%  {background-color: #5b88c1;}
+     40% {background-color: #3a5e8c;}
+     50% {background-color: #000e1f;}
+     60%  {background-color: #3a5e8c;}
+     70%  {background-color: #5b88c1;}
+     80%  {background-color: #1464c5;}
+     90%  {background-color: #74a2db;}
+     100%  {background-color: #81ade2;}
+ }
+
+.divBg:hover{
+    /*to make an inner shadow on the divs*/
+    box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 1) inset;
+}
+
+#healthbar{
+    width: 180px;
+    height: 20px;
+    background-color: green;
+    margin:5px;
+    text-align: left;
+}
+.dirt{
+    background-image: url("images/dirt.png");
+    background-size: contain;
+}
+.grass{
+    background-image: url("images/grass.png");
+    background-size: contain;
+}
+.tree{
+    background-image: url("images/tree.png");
+    background-size: contain;
+}
+.leaf{
+    background-image: url("images/leaf.jpg");
+    background-size: contain;
+}
+.rock{
+    background-image: url("images/rock.png");
+    background-size: contain;
+}
+.clouds{
+    background-color: #FFF;
+    width:35px;
+    height: 35px;
+    display: inline-block;
+}
+.pika{
+    background-image: url("images/pika.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.diglett{
+    background-image: url("images/diglett.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.squirtle{
+    background-image: url("images/squirtle.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.mewtwo{
+    background-image: url("images/mewtwo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.bulbasaur{
+    background-image: url("images/bulbasaur.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.pidgey{
+    background-image: url("images/pidgey.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.charmander{
+    background-image: url("images/charmander.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.professor{
+    background-image: url("images/professor.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.professorMessage{
+    background-image: url("images/professor.png");
+    background-size: 150px;
+    background-repeat: no-repeat;
+    background-position-y:93%;
+    background-position-x:93%;
+}
+
+#layout{
+    display: flex;
+    visibility: hidden;
+}
+.wrapper{
+    background-color: black;
+    height: auto;
+    width: 220px;
+    display: flex;
+    justify-content:center;
+    /*align-items:center;*/
+    flex-direction: column;
+}
+body{
+    margin: 0;
+}
+
+.tool{
+    border: 1px white solid;
+    width: 90px;
+    height: 90px;
+    color:white;
+}
+.tool img{
+
+    width: 55px;
+    height: 55px;
+}
+
+
+.tool:hover{
+    background-color: blue !important;
+}
+
+#tools{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 0px;
+    color:white;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Bungee', cursive;
+}
+
+#inventory button{
+    display: inline-block;
+    width: 66px;
+    height: 44px;
+    color:black;
+}
+
+.inventory{
+    font-size: 20px;
+    text-align: center;
+}
+#inventory{
+   padding-left:10px;
+}
+#restore{
+    font-size: 20px;
+    font-family: 'Bungee', cursive;
+    margin:5px 0px;
+    height:30px;
+}
+.backgroundRed{
+    background: red !important;
+}
+
+
+@media only screen and (min-width: 1001px) {
+    .divBg{
+        width:35px;
+        height:35px;
+        background-color: #91C1FC;
+        display: inline-block;
+    }
+    .clouds{
+        background-color: #FFF;
+        width:35px;
+        height: 35px;
+        display: inline-block;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .divBg{
+        width:20px;
+        height: 20px;
+        background-color: #91C1FC;
+        display: inline-block;
+    }
+    .clouds{
+        background-color: #FFF;
+        width:20px;
+        height: 20px;
+        display: inline-block;
+    }
+    #inventory button{
+        width: 33px;
+        height: 22px;
+    }
+    .tool{
+        border: 1px white solid;
+        width: 50px;
+        height: 50px;
+        color:white;
+        font-size: 8px;
+    }
+    .tool img{
+
+        width: 25px;
+        height: 25px;
+    }
+    .inventory{
+        font-size: 10px;
+        text-align: center;
+    }
+
+}

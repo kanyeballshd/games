@@ -1,0 +1,264 @@
+
+
+
+
+
+
+
+body {
+	font-family: 'Georgia','Arial',sans-serif;
+	font-size: 100%;
+	color: #B0B0B0;
+	background-color: #333;
+/*	margin: 1em;
+	padding: 3em 3em 5em 6em;
+	border: thin solid black */
+	/*-webkit-text-size-adjust: none;  Fix iphone font size changing */
+}
+p {
+	line-height: 1.5em; 
+}
+h1 {
+	color: #999;
+	/*background-color: #333;*/
+	/*border-color: #555;*/
+	font-size: 54px;
+	font-weight:normal;
+	font-family: 'Constantia','Myriad Pro','Trebuchet MS', 'Verdana','Arial',sans-serif;
+	margin: 5px;
+	/* margin-bottom: 0.5em ; */
+	padding: 0.1em;	
+	/* font-style: italic; */
+	text-align: center;
+	letter-spacing: 0;
+	/*border-style: solid;
+	border-width: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;*/
+}
+h2 {
+	color: #888;
+	/*background-color: #333;*/
+	/*border-color: #555;
+	
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	border-width: 3px; 
+	border-style: solid;*/
+	font-size: 22px;
+	font-weight:lighter;
+	font-family: 'Myriad Pro','Trebuchet MS','Verdana','Arial',sans-serif;
+	margin: 5px 0 5px;
+	padding: 0.1em;
+	
+	text-align: left;
+}
+img {
+	/* border-style: dashed; */
+	border-width: 2px;
+	border-color: #aaa;
+}
+
+a {
+	/*color:#BBD;*/
+	color:#9ad;
+}
+a:hover {
+	text-decoration:none;
+}
+
+strong {
+  font-weight: bold;
+	/* text-transform: uppercase; */
+}
+
+em {
+	font-style: italic;
+}
+
+li {
+	//color: #708590;
+}
+
+table {
+	background-color: #111;
+}
+pre {
+	font-size: 12px;
+	padding: 0;
+	margin: 0;
+	
+	border: 2px solid #999;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	line-height: 18px; /*--Height of each line of code--*/
+	
+	width: auto;
+	overflow: auto; /*--If the Code exceeds the width, a scrolling is available--*/
+	overflow-Y: hidden;  /*--Hides vertical scroll created by IE--*/
+}
+pre code {
+	margin: 0 0 0 20px;  /*--Left Margin--*/
+	padding: 18px 0;
+	display: block;
+}
+/*
+code {
+	font-family:monaco,"bitstream vera sans mono","lucida console","courier new",courier,serif;
+	font-size:80%;
+	background-color:#000;
+	border-width:2px;
+	border-style:solid;
+	border-radius: 4px;
+	border-color:#777;
+	color:#aaa;
+	padding: 2px;
+	margin: 50px 50px;
+	
+} */
+#nav_bar {
+	position:fixed;
+	float:left;
+	width:150px;
+}
+#nav_bar ul{
+	font-size:22px;
+	text-align::left;	list-style-type: none;
+	margin: 5px 5px;
+	padding:.5em;
+	border: solid 2px #555;
+	margin: 5px 5px 5px;
+	padding: 0.1em;
+	padding-left: .4em;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+#nav_bar ul li a{
+	color:#9ad;
+}
+
+#page_wrap {
+	width: 580px;
+	margin-left: 150px;
+	margin-right: auto;
+}
+
+#header {
+	font-size: 75%;
+}
+
+#header #h_nav {
+	text-align:right;
+	right:100px;
+}
+#header #h_nav ul { 
+	padding:0;
+	margin:0;
+}
+#header #h_nav ul li{
+	display:inline;	
+	padding: 0; margin:0;
+}
+#header #h_nav ul li a{ 
+	color:#C39A88;
+}
+#footer {
+	clear:both;
+	font-size:75%;
+	text-align:right;
+}
+#php_time{
+	font-size:75%;
+	float:right;
+	margin:10px 0;
+}
+hr{
+	width:80%;
+	border:1px solid #666;
+	/*color:#222;
+	background-color:#222;*/
+	height: 3px;
+}
+hr.entry {
+	clear:both;
+	width:100%;
+	height:5px;
+}
+div.entry {
+	margin: 15px 0 15px 15px;
+}
+div.currently {
+	margin:0px 10px 10px;
+  display: inline;	
+	float: right;
+  text-align: left;
+	font-size:75%; 
+}
+div.currently  ul{
+	
+	margin: 0.5em;
+}
+
+.b{
+	font-weight:bold;
+}
+.i{
+	font-style:italic;
+}
+.sub{
+	font-size:85%;
+	color:#778;
+	border: 1px solid #778;
+}
+#instructions{ 
+	margin-left:400px;
+	padding:20px;
+}
+div.message{
+	margin: 5px;
+	border: 1px solid #555;
+}
+div.message .user{
+	color: #9be;
+}
+
+.Abc {
+	color: blue;
+}
+input {
+	background-color: #353535; 
+	border: solid #555555 2px;
+	color: #b0b0b0;
+	margin: 3px;
+}
+table {
+ 	background-color: #333; 
+	border: 2px solid #555555;
+	border-collapse: collapse;
+}
+th { 
+	border: 1px solid #555555;
+	white-space: nowrap;
+	padding: 1px;
+}
+td { 
+ 	background-color: #333; 
+	border: 1px solid #555555;
+	white-space: nowrap;
+	padding: 0px;
+} 
+select {
+	background-color: #353535;
+	border: 2px solid #555555;
+	color: #c0c0c0;
+	margin: 3px;
+}
+label {
+	margin: 0px 2px;
+}
+
+textarea {
+	background-color: #353535;
+	border: 2px solid #555555;
+	color: #b0b0b0;
+}

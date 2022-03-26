@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0023)https://htmltetris.com/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS
+OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY 
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL 
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE 
+GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER 
+IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR 
+OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN 
+IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+
+
+
+
+	 
+	<meta name="keywords" content="steven lu, tetris, game, free, javascript, html5, browser, native, iOS, iPhone, iPad, iPad 2, Android, webkit, opera, chrome, touch, safari">   
+	<meta name="description" content="This is a Free HTML tetris online game that has wide browser support. It provides innovative intuitive touch controls for Apple iOS iPhone iPad products and also Android devices. ">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta names="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<title>Tetris!</title>	
+	
+	<!-- strokeText.js from http://www.netzgesta.de/dev/text/#overview 
+	
+	I need to switch to displaying game messages using regular elements rather than scrawling on canvas
+	
+	-->
+	<script src="./Tetris!_files/strokeText.js.download"></script>
+
+	<link rel="stylesheet" href="./Tetris!_files/page.css" type="text/css">
+    
+	<style type="text/css"> /* These are just for finger debug elements */
+		.finger-indicator {
+			position: absolute;
+			z-index: 4;
+			border: 2px solid #4a4;
+			background-color: rgba(0,50,0,0.5);
+			padding: 4px;
+		}
+		.finger-indicator.control {
+			background-color: rgba(50,0,0,0.5);
+			border: 2px solid #a44;
+		}
+	</style>
+	
+	
+	<!-- <script src='style/prettify/prettify.js'></script>
+	<link href="style/prettify.css" rel="stylesheet" type="text/css" /> 
+
+	<script>Event.observe(window, 'load', function() {prettyPrint()});</script> -->
+
+	<script src="./Tetris!_files/tetris.js.download" type="text/javascript"></script>
+	<script type="text/javascript">
+		TETRIS.setScoreIncreasing();
+	</script>
+   <!-- Google analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X0LFE1C5CY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-X0LFE1C5CY');
+</script>
+<script async="" src="./Tetris!_files/f.txt" crossorigin="anonymous"></script>	
+<style type="text/css">
+.vue-modal-resizer {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  right: 0;
+  bottom: 0;
+  z-index: 9999999;
+  background: transparent;
+  cursor: se-resize;
+}
+.vue-modal-resizer::after {
+  display: block;
+  position: absolute;
+  content: '';
+  background: transparent;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid #ddd;
+  border-left: 10px solid transparent;
+}
+.vue-modal-resizer.clicked::after {
+  border-bottom: 10px solid #369be9;
+}
+</style><style type="text/css">
+.v--modal-block-scroll {
+  overflow: hidden;
+  width: 100vw;
+}
+.v--modal-overlay {
+  position: fixed;
+  box-sizing: border-box;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  opacity: 1;
+}
+.v--modal-overlay.scrollable {
+  height: 100%;
+  min-height: 100vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.v--modal-overlay .v--modal-background-click {
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+}
+.v--modal-overlay .v--modal-box {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.v--modal-overlay.scrollable .v--modal-box {
+  margin-bottom: 2px;
+}
+.v--modal {
+  background-color: white;
+  text-align: left;
+  border-radius: 3px;
+  box-shadow: 0 20px 60px -2px rgba(27, 33, 58, 0.4);
+  padding: 0;
+}
+.v--modal.v--modal-fullscreen {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  left: 0;
+  top: 0;
+}
+.v--modal-top-right {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.overlay-fade-enter-active,
+.overlay-fade-leave-active {
+  transition: all 0.2s;
+}
+.overlay-fade-enter,
+.overlay-fade-leave-active {
+  opacity: 0;
+}
+.nice-modal-fade-enter-active,
+.nice-modal-fade-leave-active {
+  transition: all 0.4s;
+}
+.nice-modal-fade-enter,
+.nice-modal-fade-leave-active {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+</style><style type="text/css">
+.vue-dialog div {
+  box-sizing: border-box;
+}
+.vue-dialog .dialog-flex {
+  width: 100%;
+  height: 100%;
+}
+.vue-dialog .dialog-content {
+  flex: 1 0 auto;
+  width: 100%;
+  padding: 15px;
+  font-size: 14px;
+}
+.vue-dialog .dialog-c-title {
+  font-weight: 600;
+  padding-bottom: 15px;
+}
+.vue-dialog .dialog-c-text {
+}
+.vue-dialog .vue-dialog-buttons {
+  display: flex;
+  flex: 0 1 auto;
+  width: 100%;
+  border-top: 1px solid #eee;
+}
+.vue-dialog .vue-dialog-buttons-none {
+  width: 100%;
+  padding-bottom: 15px;
+}
+.vue-dialog-button {
+  font-size: 12px !important;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  line-height: 40px;
+  height: 40px;
+  color: inherit;
+  font: inherit;
+  outline: none;
+}
+.vue-dialog-button:hover {
+  background: rgba(0, 0, 0, 0.01);
+}
+.vue-dialog-button:active {
+  background: rgba(0, 0, 0, 0.025);
+}
+.vue-dialog-button:not(:first-of-type) {
+  border-left: 1px solid #eee;
+}
+</style><style type="text/css"></style></head>
+
+
+<body>
+
+
+
+
+
+<div id="indicatorcontainer"></div>
+
+	<canvas id="board_canvas" width="294" height="686" style="position:fixed; left:10px; top:10px; z-index:1">
+		Your browser does not support HTML Game Tetris Canvas.
+	</canvas>
+	<canvas id="animated_canvas" width="294" height="686" style="position:fixed; left:10px; top:10px; z-index:3"></canvas>
+	<canvas id="shadow_canvas" width="294" height="686" style="position:fixed; left:10px; top:10px; z-index:2"></canvas>
+	<!-- <div id="placeholder" style=""> </div> -->
+	
+	<div style="position: fixed; top: 10px; font-family: sans-serif; font-size: 30px; left: 314px;"> <span id="score">2200</span></div>
+
+
+<div id="instructions" style="position: relative; margin-left: 294px; top: 34px;">
+
+
+
+	<div id="controls" style="float: left"> 
+		<input type="button" onclick="if (TETRIS.isPaused()) { TETRIS.unPause(); } else { TETRIS.setPause(); }" value="Pause" style="font-size: 150%"><br>
+		
+		<p><input type="button" onclick="var i = document.getElementById(&quot;instr&quot;).style; i.display = (i.display==&quot;none&quot;?&quot;inline&quot;:&quot;none&quot;); TETRIS.setPause(); " value="Toggle Instructions"></p>
+	</div>
+	<div id="instr" style="display: none;"> 
+
+		<h1>HTML Tetris Game Online Free</h1>
+		<p> Touch events are now supported! Play on iOS and Android: <br>
+		Swipe anywhere to move, tap to rotate (Can also tap while swiping to rotate). Swipe down to drop.
+		</p>
+		<p>
+		</p><h2>Touch Sensitivity Html Tetris Online:</h2>
+		<input id="sens_range" type="range" min="0.2" max="5" step="0.05" value="1" onchange="TETRIS.setTouchSensitivity(this.value); document.getElementById(&quot;sensitivity&quot;).innerHTML = Math.round(this.value*1000)/1000;"> 
+		<span id="sensitivity">1</span>
+		<p></p>
+
+
+		<p> For PC/Mac: Use the Arrow keys to move and rotate, spacebar to drop. 
+		Z,X to rotate in either direction. </p>
+		<p> Pause: P</p>
+		<p> Mouse control (toggle): M<br>
+		left click to rotate and right click to drop:
+		<a href="https://www.mvpcashadvance.com/">MVP Cash Advance</a>. Mouse control is experimental. You can use your mouse while playing and order your paper at service to have more time for playing. Also you can find many other interesting occupations.
+		</p>
+		<p> To start a new game, refresh the page (F5)! </p>
+		<h2>We are grateful for the support Play Free Html Tetris Online</h2>
+		<p>This is all the rules you need to know, if you want to share them with friends, you can use <a href="https://www.onlineocr.net/">Image to Text</a> converter to choose the most suitable format for you without any limits. </p>
+		<p>This is an infinite free html tetris game online. To score more points, drop pieces as fast
+		as you can!.</p>
+		<p>Changes coming soon (To do list): </p>
+		<ul>
+		<li>Centered positioning of board</li>
+		<li>Preview next piece(s)</li>
+		<li>More visual effects and animations: CSS3 transitions for animation, with fallback to JS animation. In particular I want a satisfying effect for the hard drop.</li>
+		</ul>
+		
+		<p><input type="button" onclick="var result = TETRIS.toggle_touch_draw(); if (result) {this.value = &quot;Turn Touch Debug Off&quot;; } else { this.value=&quot;Turn Touch Debug On&quot;;}" value="Turn Touch Debug Off"></p>
+
+	</div>
+</div>
+
+
+
+
+
+
+
+<div data-flash-app-container="true" id="flash_player_app_root"></div></body></html>
