@@ -54,3 +54,24 @@ p {
     align-items: center;
     justify-content: center;
 }
+.hiddenbtn {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 48px;
+    text-decoration: none;
+    font-weight: 700;
+}
+a {
+    display: block;
+    font-family: helvetica;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 24px;
+
+}
+a:hover {
+    color: red;
+}
