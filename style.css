@@ -75,3 +75,15 @@ p {
 .gamechild a:hover {
 color: red;
 }
+.bigbtn a:hover {
+    color: yellow;
+}
+.bigbtn {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 48px;
+    text-decoration: none;
+    font-weight: 700;
+}
